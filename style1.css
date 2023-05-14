@@ -9,17 +9,21 @@ nav{
   display: flex;
   height: 80px;
   width: 100%;
-  background: #1b1b1b;
+  /* background: #1b1b1b; */
+  background: #303739;
   align-items: center;
   justify-content: space-between;
   padding: 0 50px 0 100px;
   flex-wrap: wrap;
 }
-nav .logo{
-  color: #fac131;
+nav .logo a{
+  color: #8bfa31;
+  text-decoration: none;
   font-size: 35px;
   font-weight: 600;
 }
+
+
 nav ul{
   display: flex;
   flex-wrap: wrap;
@@ -31,21 +35,22 @@ nav ul li{
 nav ul li a{
   color: #f2f2f2;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
   padding: 8px 15px;
   border-radius: 5px;
   letter-spacing: 1px;
   transition: all 0.3s ease;
 }
-nav ul li a:active,
-nav ul li a:hover{
+/* nav ul li a:active, */
+nav ul li a:hover,.active a{
   color: #111;
   background: #fac131;
 }
+
 nav .menu-btn i{
   color: #fff;
-  font-size: 22px;
+  font-size: 30px;
   cursor: pointer;
   display: none;
 }
@@ -92,21 +97,22 @@ input[type="checkbox"]{
   #click:checked ~ ul li a{
     margin-left: 0px;
   }
-  nav ul li a.active,
-  nav ul li a:hover{
+  /* nav ul li a.active, */
+  nav ul li a:hover,.active a{
     background: none;
     color: cyan;
   }
 }
 
 main {
+  font-size: 20px;
 	margin: 20px;
 	display: flex;
 	flex-wrap: wrap;
 }
 
 section {
-	flex-basis: 70%;
+	flex-basis: 90%;
 	padding-right: 20px;
 	box-sizing: border-box;
 }
@@ -208,4 +214,154 @@ footer {
 	text-align: center;
 	align-self: flex-start;
 	width: 100%;
+}
+
+/* login-signup */
+
+.container{
+  /* max-width: 800px;
+  
+  margin-left: 180px;
+  margin-top: 240px;
+  margin-bottom: 240px;
+  margin-right: 180px;
+  width: 100%; */
+  margin: 50px auto;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,1.5);
+	text-align: center;
+}
+.container .title{
+  font-size: 30px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  /* content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 100%;
+  border-radius: 5px; */
+  background: linear-gradient(135deg, #71b7e6, #9b59b6);
+}
+.content form .user-details{
+  display:-webkit-inline-box;
+  flex-wrap: wrap;
+  justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+/* for signup page */
+.user-details .input-box input{
+  height: 28px;
+  width: 95%;
+  outline: auto;
+  font-size: 14px;
+  border-radius: 5px;
+  padding-left: 30px;
+  padding-right: 10px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #9b59b6;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background: linear-gradient(135deg, #71b7e6, #9b59b6);
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background: linear-gradient(-135deg, #71b7e6, #9b59b6);
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category nav ul{
+    flex-direction: column;
+  }
+  
 }
