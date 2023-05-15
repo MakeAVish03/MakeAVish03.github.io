@@ -109,6 +109,7 @@ main {
 	margin: 20px;
 	display: flex;
 	flex-wrap: wrap;
+	background-image: url("/Images/Nursing home-bro.svg");
 }
 
 section {
