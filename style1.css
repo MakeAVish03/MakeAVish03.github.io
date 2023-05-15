@@ -109,10 +109,10 @@ main {
 	margin: 20px;
 	display: flex;
 	flex-wrap: wrap;
-	background-image: url("/Images/Nursing home-bro.svg");
+	/*background-image: url("/Images/Nursing home-bro.svg");
 	background-attachment: fixed;
 	background-size: 100%;
-	opacity: 0.1; 
+	opacity: 0.1; */
 }
 
 section {
