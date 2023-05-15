@@ -112,7 +112,7 @@ main {
 	background-image: url("/Images/Nursing home-bro.svg");
 	background-attachment: fixed;
 	background-size: 100%;
-	background-opacity: 50%; 
+	opacity: 0.1; 
 }
 
 section {
