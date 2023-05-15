@@ -110,6 +110,9 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	background-image: url("/Images/Nursing home-bro.svg");
+	background-attachment: fixed;
+	background-size: 100%;
+	background-opacity: 50%; 
 }
 
 section {
