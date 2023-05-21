@@ -1,8 +1,13 @@
+
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Elderly Care | Contact Us</title>
 	<link rel="stylesheet" type="text/css" href="style1.css">
+	<!-- <script type="text/javascript" src="contactjs.js"></script> -->
+	<script>
+		
+	</script>
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 	<meta name="viewport" content="width=device-width, initial-scale=0.7">
@@ -10,7 +15,7 @@
 <body>
 	<nav>
 		<div class="logo">
-			<a href="home.html">Elderly Care </a>
+			<a href="home.html"><img src="images/logo.png" alt="ElderlyCare"></a>
 		</div>
 		<input type="checkbox" id="click">
 		<label for="click" class="menu-btn">
@@ -27,26 +32,34 @@
 		</ul>
 	 </nav>
 	<main>
+		<div class="container">
 		<section class="contact">
 			<h2>Contact Us</h2>
-			<form>
+			<form 
+				action="https://formspree.io/f/mayzzwdj"
+				method="POST"
+				id="contact-form">
+
 				<label for="name">Name:</label>
-				<input type="text" id="name" name="name" required>
+				<input type="text" id="name" name="name" placeholder="Your Name..." required>
 
 				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" required>
+				<input type="email" id="email" name="email" placeholder="example@gmail.com" required>
 
 				<label for="message">Message:</label>
-				<textarea id="message" name="message" required></textarea>
+				<textarea id="message" name="message" placeholder="Your message..." required></textarea>
 
-				<input type="submit" value="Send">
+				<button type="submit" class="submit-btn">
+					Send
+				</button>
 			</form>
 			<br>
 			<b>For any queries:</b><br> 
 			<span><i class="fa-solid fa-phone"></i></span><span><a href="tel:+919834254940" class="btn">+919834254940</a></span>
 			<br>
-			<p><b>Email:-</b><a href="#" class="btn">elderlycare@gmail.com</a></p>
+			<p><b>Email:-</b><a href="mailto:elderlycare2023@gmail.com" class="btn">elderlycare2023@gmail.com</a></p>
 		</section>
+	</div>
 	</main>
 	<footer>
 		<p>&copy; Elderly Care 2023</p>
