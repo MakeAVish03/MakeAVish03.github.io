@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  
+<title>Blood Sugar Calculator</title>
+<link rel="stylesheet" type="text/css" href="calc.css">
+
+<meta name="viewport" content="width=device-width, initial-scale=0.7">
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+.container {
+  background-color: #fff;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group {
+  display: flex;
+}
+
+.input-group-addon {
+  padding: 6px 12px;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-weight: normal;
+}
+
+input[type="number"] {
+  flex-grow: 1;
+  padding: 5px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+</style>
+
+</head>
+
+<body>
+    <nav>
+		<div class="logo">
+			<a href="home.html"><img src="images/logo.png" alt="ElderlyCare"></a>
+		</div>
+            <br>
+		   <li><a href="services.html"> Back to Services</a></li>
+	 </nav>
+<div class="container">
+  <h1>Blood Sugar Calculator</h1>
+  <form action="" method="post">
+    <div class="form-group">
+      <label for="blood_sugar">Blood Sugar</label>
+      <div class="input-group">
+        <input type="number" id="blood_sugar" name="blood_sugar" placeholder="In mg/dL" required>
+        <span class="input-group-addon">mg/dL</span>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Calculate</button>
+  </form>
+  <div class="result"></div>
+</div>
+<script>
+    var bloodSugarCalculator = (function() {
+  function calculateBloodSugar(bloodSugar) {
+    if (bloodSugar < 70) {
+      return "Hypoglycemia";
+    } else if (bloodSugar < 100) {
+      return "Normal";
+    } else if (bloodSugar < 126) {
+      return "Prediabetes";
+    } else {
+      return "Diabetes";
+    }
+  }
+
+  return {
+    calculateBloodSugar: calculateBloodSugar
+  };
+})();
+
+window.onload = function() {
+  var form = document.querySelector("form");
+  form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var bloodSugar = document.querySelector("#blood_sugar").value;
+
+    if (bloodSugar) {
+      var category = bloodSugarCalculator.calculateBloodSugar(bloodSugar);
+
+      document.querySelector(".result").innerHTML = "Your blood sugar is " + bloodSugar + ". Your category is " + category;
+    }
+  });
+};
+</script>
+</body>
+</html>

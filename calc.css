@@ -1,0 +1,84 @@
+nav .logo img{
+    margin-left: -2rem;
+    height: 4rem;
+    
+  }
+nav li a{
+    text-decoration: none;
+
+}
+nav li a{
+    color:#9b59b6;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+  }
+  /* nav ul li a:active, */
+  nav li a:hover,.active a{
+    color: #111;
+    background: #fac131;
+  }
+
+.container{
+    /* max-width: 800px;
+    
+    margin-left: 180px;
+    margin-top: 240px;
+    margin-bottom: 240px;
+    margin-right: 180px;
+    width: 100%; */
+    margin: 50px auto;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+    background-color: #fff;
+    padding: 25px 30px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,1.5);
+      text-align: center;
+  }
+  .container .title{
+    color: #9b59b6;
+    font-size: 30px;
+    font-weight: 500;
+    position: relative;
+  }
+  body {
+    font-family: sans-serif;
+    margin: 40px;
+  }
+  
+  .container {
+    width: 500px;
+    margin: 0 auto;
+  }
+  
+  .form-group {
+    margin-bottom: 10px;
+  }
+  
+  .input-group {
+    width: 100%;
+  }
+  
+  .input-group input {
+    width: 70%;
+  }
+  
+  .input-group button {
+    width: 30%;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .result {
+    margin-top: 10px;
+    font-size: 18px;
+  }
+  

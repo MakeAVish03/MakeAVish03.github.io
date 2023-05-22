@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>BMI Calculator</title>
+  <link rel="stylesheet" type="text/css" href="calc.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  background-color: #fff;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.container560 {
+  max-width: 560px;
+  margin: 0 auto;
+}
+
+.center {
+  text-align: center;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.content {
+  margin-bottom: 20px;
+}
+
+.instruction {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.one-half {
+  width: 50%;
+  float: left;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.half-input {
+  width: 100%;
+}
+
+.grey-border-text-box {
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.result {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.result-text {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+#calculate {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+  </style>
+
+</head>
+<body>
+    <nav>
+		<div class="logo">
+			<a href="home.html"><img src="images/logo.png" alt="ElderlyCare"></a>
+		</div>
+            <br>
+		   <li><a href="services.html"> Back to Services</a></li>
+	 </nav>
+  <h1>BMI Calculator</h1>
+  <p>Calculate your Body Mass Index (BMI) using our BMI calculator.</p>
+  <div class="container" id="bmi-calculator">
+    <div class="container560 center">
+      <div class="header">
+        <div class="title">BMI Calculator</div>
+      </div>
+      <div class="content">
+        <div id="panel-1" style="display: block;">
+          <div class="instruction">Enter your height and weight to calculate your BMI:</div>
+          <div class="one-half">
+            <div class="half-input">
+              <input type="text" id="height" class="grey-border-text-box" placeholder="Height in meters">
+            </div>
+          </div>
+          <div class="one-half">
+            <div class="half-input">
+              <input type="text" id="weight" class="grey-border-text-box" placeholder="Weight in kilograms">
+            </div>
+          </div>
+          <div class="result">
+            <div class="result-text">BMI:</div>
+            <div class="result-value"></div>
+          </div>
+          <div class="button-container">
+            <input type="button" id="calculate" value="Calculate">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+  $('#calculate').on('click', function() {
+    var height = parseFloat($('#height').val());
+    var weight = parseFloat($('#weight').val());
+    var bmi = weight / (height * height);
+    $('.result-value').text(bmi.toFixed(2)); // Use the correct class name here
+  });
+});
+
+  </script>
+</body>
+</html>

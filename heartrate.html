@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Heart Rate Calculator</title>
+  <link rel="stylesheet" type="text/css" href="calc.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  background-color: #fff;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+    <nav>
+		<div class="logo">
+			<a href="home.html"><img src="images/logo.png" alt="ElderlyCare"></a>
+		</div>
+            <br>
+		   <li><a href="services.html"> Back to Services</a></li>
+	 </nav>
+
+  <h1>Heart Rate Calculator</h1>
+  <div class="container">
+    <label for="age">Age:</label>
+    <input type="number" id="age" min="1" required>
+    <br><br>
+    <label for="resting-heart-rate">Resting Heart Rate:</label>
+    <input type="number" id="resting-heart-rate" min="1" required>
+    <br><br>
+    <button onclick="calculateHeartRate()">Calculate</button>
+    <div id="result"></div>
+  </div>
+
+  <script src="hrate.js"></script>
+</body>
+</html>

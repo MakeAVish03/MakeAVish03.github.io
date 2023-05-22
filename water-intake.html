@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Water Intake Calculator</title>
+  <link rel="stylesheet" type="text/css" href="calc.css">
+  <style>
+    body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#container {
+  background-color: #fff;
+  max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+#result {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: center;
+}
+
+  </style>
+</head>
+<body>
+    <nav>
+		<div class="logo">
+			<a href="home.html"><img src="images/logo.png" alt="ElderlyCare"></a>
+		</div>
+            <br>
+		   <li><a href="services.html"> Back to Services</a></li>
+	 </nav>
+  <h1>Water Intake Calculator</h1>
+  <div id="container">
+    <label for="weight">Weight (in kilograms):</label>
+    <input type="number" id="weight" min="1" required>
+    <label for="activity-level">Activity Level:</label>
+    <select id="activity-level">
+      <option value="sedentary">Sedentary</option>
+      <option value="lightly-active">Lightly Active</option>
+      <option value="moderately-active">Moderately Active</option>
+      <option value="very-active">Very Active</option>
+    </select>
+    <button onclick="calculateWaterIntake()">Calculate</button>
+    <div id="result"></div>
+  </div>
+
+  <!-- <script src="script.js"></script> -->
+  <script>
+    function calculateWaterIntake() {
+  var weight = parseFloat(document.getElementById('weight').value);
+  var activityLevel = document.getElementById('activity-level').value;
+  var waterIntake = 0;
+
+  if (isNaN(weight)) {
+    alert('Please enter a valid weight.');
+    return;
+  }
+
+  if (activityLevel === 'sedentary') {
+    waterIntake = weight * 0.03;
+  } else if (activityLevel === 'lightly-active') {
+    waterIntake = weight * 0.035;
+  } else if (activityLevel === 'moderately-active') {
+    waterIntake = weight * 0.04;
+  } else if (activityLevel === 'very-active') {
+    waterIntake = weight * 0.045;
+  }
+
+  var resultDiv = document.getElementById('result');
+  resultDiv.innerHTML = 'Daily water intake: ' + waterIntake.toFixed(2) + ' liters.';
+}
+
+  </script>
+</body>
+</html>
